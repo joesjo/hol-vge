@@ -66,8 +66,12 @@ export default function Game(props: RouteComponentProps) {
   if (currentGames) {
     return (
       <>
-        <Center h="100vh" flexDirection="column">
-          <Flex h="700px" mt="100px">
+        <Center h={[null, null, null, "100vh"]} flexDirection="column">
+          <Flex
+            h="700px"
+            mt={["0", "0", "0", "100px"]}
+            flexDirection={["column", "column", "column", "row"]}
+          >
             <GameInfo
               gameInfo={currentGames[0]}
               hidden={false}
@@ -81,7 +85,8 @@ export default function Game(props: RouteComponentProps) {
                 p="4"
                 fontSize="lg"
                 borderRadius="full"
-                mt="-20"
+                mt={["3rem", "3rem", "3rem", "-20"]}
+                mb={["3rem", "3rem", "3rem", "0"]}
               >
                 VS
               </Text>
@@ -95,12 +100,13 @@ export default function Game(props: RouteComponentProps) {
           </Flex>
         </Center>
         <Box
-          position="absolute"
+          position={["static", "static", "static", "absolute"]}
           bottom="0"
           w="100%"
           mx="auto"
           textAlign="center"
-          mb="15vh"
+          mb={["0", "0", "0", "15vh"]}
+          mt={["500px", "500px", "500px", "0"]}
         >
           {gameOver ? (
             <>
@@ -121,12 +127,13 @@ export default function Game(props: RouteComponentProps) {
           )}
         </Box>
         <Box
-          position="absolute"
+          position={["static", "static", "static", "absolute"]}
           bottom="0"
           w="100%"
           mx="auto"
           textAlign="center"
-          mb="4"
+          mb={["4rem", "4rem", "4rem", "1rem"]}
+          mt={["1rem", "1rem", "1rem", "0"]}
         >
           <Text color="whitesmoke" fontSize="lg">
             highscore: {highscore}

@@ -9,13 +9,12 @@ export default function GameInfo(props: GameInfoProps) {
   if (props.hidden)
     return (
       <Flex direction="column" align="center" w="100%">
-        <Center h="250px" w="250px">
+        <Center h="250px" w="250px" mb="24px" mt="24px">
           <Image
             src={artAddress}
             maxW="250px"
             maxH="250px"
             shadow="lg"
-            mb="24px"
             objectFit="scale-down"
             key={artAddress}
           ></Image>
@@ -42,13 +41,12 @@ export default function GameInfo(props: GameInfoProps) {
   else
     return (
       <Flex direction="column" align="center" w="100%">
-        <Center h="250px" w="250px">
+        <Center h="250px" w="250px" mb="24px" mt="24px">
           <Image
             src={artAddress}
             maxW="250px"
             maxH="250px"
             shadow="lg"
-            mb="24px"
             objectFit="scale-down"
             key={artAddress}
           ></Image>
