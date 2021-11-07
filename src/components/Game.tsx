@@ -105,7 +105,7 @@ export default function Game(props: RouteComponentProps) {
           {gameOver ? (
             <>
               <Text fontWeight="bold" fontSize="6xl" color="whitesmoke">
-                game over
+                game over :{"("}
               </Text>
               <Text fontSize="2xl" color="whitesmoke">
                 final score: {score}
