@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Text } from "@chakra-ui/layout";
+import { Box, Flex, Text } from "@chakra-ui/layout";
 import { RouteComponentProps } from "@reach/router";
 import getGame from "../utils/gameDataHandler";
 import { useEffect, useState } from "react";
