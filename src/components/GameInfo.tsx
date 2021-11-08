@@ -8,14 +8,18 @@ export default function GameInfo(props: GameInfoProps) {
   const { title, publisher, sales, artAddress } = props.gameInfo;
   if (props.hidden)
     return (
-      <Flex direction="column" align="center" w="100%">
-        <Center h="250px" w="250px">
+      <Flex direction="column" align="center" w="100%" maxW="600px">
+        <Center
+          h={{ base: "150px", md: "250px" }}
+          w={{ base: "150px", md: "250px" }}
+          mb="24px"
+          mt="24px"
+        >
           <Image
             src={artAddress}
-            maxW="250px"
-            maxH="250px"
+            maxW={{ base: "150px", md: "250px" }}
+            maxH={{ base: "150px", md: "250px" }}
             shadow="lg"
-            mb="24px"
             objectFit="scale-down"
             key={artAddress}
           ></Image>
@@ -23,7 +27,7 @@ export default function GameInfo(props: GameInfoProps) {
         <Text
           color="purple.600"
           fontWeight="bold"
-          fontSize="3xl"
+          fontSize={{ base: "xl", md: "3xl" }}
           align="center"
         >
           {`${title} (${publisher})`}
@@ -41,14 +45,18 @@ export default function GameInfo(props: GameInfoProps) {
     );
   else
     return (
-      <Flex direction="column" align="center" w="100%">
-        <Center h="250px" w="250px">
+      <Flex direction="column" align="center" w="100%" maxW="600px">
+        <Center
+          h={{ base: "150px", md: "250px" }}
+          w={{ base: "150px", md: "250px" }}
+          mb="24px"
+          mt="24px"
+        >
           <Image
             src={artAddress}
-            maxW="250px"
-            maxH="250px"
+            maxW={{ base: "150px", md: "250px" }}
+            maxH={{ base: "150px", md: "250px" }}
             shadow="lg"
-            mb="24px"
             objectFit="scale-down"
             key={artAddress}
           ></Image>
@@ -56,13 +64,17 @@ export default function GameInfo(props: GameInfoProps) {
         <Text
           color="purple.600"
           fontWeight="bold"
-          fontSize="3xl"
+          fontSize={{ base: "xl", md: "3xl" }}
           align="center"
         >
           {`${title} (${publisher})`}
         </Text>
         <Text color="whitesmoke">has</Text>
-        <Text color="purple.600" fontWeight="bold" fontSize="4xl">
+        <Text
+          color="purple.600"
+          fontWeight="bold"
+          fontSize={{ base: "2xl", md: "4xl" }}
+        >
           {props.countUp ? (
             <CountUp end={sales} duration={0.5} separator="," />
           ) : (

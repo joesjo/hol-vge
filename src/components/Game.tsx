@@ -66,48 +66,49 @@ export default function Game(props: RouteComponentProps) {
   if (currentGames) {
     return (
       <>
-        <Center h="100vh" flexDirection="column">
-          <Flex h="700px" mt="100px">
-            <GameInfo
-              gameInfo={currentGames[0]}
-              hidden={false}
-              onPlay={handleInput}
-              countUp={false}
-            />
-            <Box alignSelf="center" mx="150px">
-              <Text
-                fontWeight="bold"
-                bg="whitesmoke"
-                p="4"
-                fontSize="lg"
-                borderRadius="full"
-                mt="-20"
-              >
-                VS
-              </Text>
-            </Box>
-            <GameInfo
-              gameInfo={currentGames[1]}
-              hidden={infoHidden}
-              onPlay={handleInput}
-              countUp={true}
-            />
-          </Flex>
-        </Center>
-        <Box
-          position="absolute"
-          bottom="0"
-          w="100%"
-          mx="auto"
-          textAlign="center"
-          mb="15vh"
+        <Flex
+          h={{ base: "auto", xl: "600px" }}
+          mt={{ base: "0", xl: "100px" }}
+          flexDirection={{ base: "column", xl: "row" }}
+          justifyContent="center"
+          alignItems={{ base: "center", xl: "normal" }}
         >
+          <GameInfo
+            gameInfo={currentGames[0]}
+            hidden={false}
+            onPlay={handleInput}
+            countUp={false}
+          />
+          <Box alignSelf="center" mx="100px">
+            <Text
+              fontWeight="bold"
+              bg="whitesmoke"
+              p="4"
+              fontSize="lg"
+              borderRadius="full"
+              my="2rem"
+            >
+              VS
+            </Text>
+          </Box>
+          <GameInfo
+            gameInfo={currentGames[1]}
+            hidden={infoHidden}
+            onPlay={handleInput}
+            countUp={true}
+          />
+        </Flex>
+        <Box textAlign="center" mt={{ base: "4rem", xl: "0" }}>
           {gameOver ? (
             <>
-              <Text fontWeight="bold" fontSize="6xl" color="whitesmoke">
+              <Text
+                fontWeight="bold"
+                fontSize={{ base: "3xl", md: "6xl" }}
+                color="whitesmoke"
+              >
                 game over :{"("}
               </Text>
-              <Text fontSize="2xl" color="whitesmoke">
+              <Text fontSize={{ base: "lg", md: "2xl" }} color="whitesmoke">
                 final score: {score}
               </Text>
               <Button mt="4" onClick={() => restartGame()}>
@@ -120,14 +121,7 @@ export default function Game(props: RouteComponentProps) {
             </Text>
           )}
         </Box>
-        <Box
-          position="absolute"
-          bottom="0"
-          w="100%"
-          mx="auto"
-          textAlign="center"
-          mb="4"
-        >
+        <Box textAlign="center" mt="3rem">
           <Text color="whitesmoke" fontSize="lg">
             highscore: {highscore}
           </Text>
