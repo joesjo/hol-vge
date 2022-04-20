@@ -11,8 +11,6 @@ export default function getGame() {
       random = Math.floor(Math.random() * games.length);
       randomGame = games[random];
     }
-    previousGame = randomGame;
-    return randomGame;
   }
   previousGame = randomGame;
   return randomGame;
